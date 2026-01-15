@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      * {
+        font-family: roboto, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(90deg, #a0f0d1, #7ed3e0);
+      }
+
+      header {
+        text-align: center;
+        font-size: 1.5em
+      }
+
+      #title {
+        background: linear-gradient(135deg, #1f508f 10%, #1dd1a1 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent
+      }
+
+      #main {
+        display: grid;
+        grid-template-columns: auto;
+        position: relative;
+        margin: auto;
+        top: 5em;
+        max-width: 50%;
+        height: 20vw;
+        background: rgba(0, 0, 0, 0.19);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 1em 1em;
+        text-align: center;
+        align-items: left;
+        gap: 10px;
+        transition: 0.5s
+      }
+
+      #main:hover {
+        transform: translateY(-1px);
+        border: none rgba(255, 255, 255m 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #json {
+        resize: none;
+        padding: 8px;
+        border: solid white 1px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        color: #606060;
+        transition: 50ms
+      }
+
+      #json:focus {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.20);
+        outline: none
+      }
+
+      .buttons {
+        width: 5vw;
+        height: 4vh;
+        font-size: 1.3em;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+        border: none;
+        border-radius: 6px;
+        color: #3b7d5a;
+        background-color: #b0e0d3;
+        cursor: pointer;
+        justify-self: center;
+        gap: 6px;
+        transition: 0.2s ease
+      }
+
+      .buttons:hover {
+        transform: translateY(1px);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        margin-right: 2px;
+        margin-left: 2px;
+      }
+
+      #buttoncon {
+        padding: 0;
+        margin: 0
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">{JSON} Tools</h1>
+      <label>Minifier/Beautifier</label>
+    </header>
+    <main>
+      <div id="main">
+        <textarea id="json" placeholder="Paste a JSON here..." autocorect="off" autocomplete="off" spellcheck="false" autocapitalize="off"></textarea>
+        <div id="buttoncon">
+          <button id="minbut" class="buttons">Minify</button>
+          <button id="formatbut" class="buttons">Format</button>
+          <button id="copybut" class="buttons">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <rect x="9" y="9" width="13" height="13" rx="4" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg> Copy </button>
+          <button id="clearbut" class="buttons">Clear</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
